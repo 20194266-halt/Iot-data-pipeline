@@ -1,41 +1,33 @@
 package org.myorg.model;
+import org.apache.flink.api.java.tuple.Tuple2;
+import com.datastax.driver.mapping.annotations.*;
+import java.util.UUID;
+
+
+@Table(keyspace = "mykeyspace", name = "room_condition")    
 public class RoomCondition {
-    private double humidityValue;
-    private double tempValue;
-    private double aqi;
-    private double energyConsumption;
+    @PartitionKey
+    public UUID id;
 
-    // Getters
-    public double getHumidityValue() {
-        return humidityValue;
-    }
+    @Column(name = "temp_value")
+    public Double temp_value;
+    
+    @Column(name = "humidity_value")
+    public Double humidity_value;
 
-    public double getTempValue() {
-        return tempValue;
-    }
+    @Column(name = "aqi")
+    public Double aqi;
 
-    public double getAqi() {
-        return aqi;
-    }
+    @Column(name = "energy_consumption")
+    public Double energy_consumption;
 
-    public double getEnergyConsumption() {
-        return energyConsumption;
-    }
+    public RoomCondition() {}
 
-    // Setters
-    public void setHumidityValue(double humidityValue) {
-        this.humidityValue = humidityValue;
-    }
-
-    public void setTempValue(double tempValue) {
-        this.tempValue = tempValue;
-    }
-
-    public void setAqi(double aqi) {
+    public RoomCondition(UUID id, Double temp_value, Double humidity_value, Double aqi, Double energy_consumption) {
+        this.id = id;
+        this.temp_value = temp_value;
+        this.humidity_value = humidity_value;
         this.aqi = aqi;
-    }
-
-    public void setEnergyConsumption(double energyConsumption) {
-        this.energyConsumption = energyConsumption;
+        this.energy_consumption = energy_consumption;
     }
 }
