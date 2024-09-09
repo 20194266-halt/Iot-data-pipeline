@@ -54,13 +54,9 @@ def on_message(client, userdata, msg):
         """)
         session.execute(prepared_stmt_energy, (record_id, data['energy_consumption'], timestamp))
 
-# Initialize MQTT client
 mqtt_client = Client()
 mqtt_client.on_connect = on_connect
 mqtt_client.on_message = on_message
 
-# Connect to MQTT broker
 mqtt_client.connect(mqtt_broker, 1883, 60)
-
-# Start MQTT loop
 mqtt_client.loop_forever()

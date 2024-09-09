@@ -9,7 +9,7 @@ This project aims to create a data pipeline for collecting, transforming, storin
 - **Processing:** Apache Flink
 - **Programming Language:** Java
 
-![Data Pipeline](./DataFlow/dataflow.png)
+![Data Pipeline](Images\datapipeline.png)
 
 ## Implementation
 1. **Data Source**
