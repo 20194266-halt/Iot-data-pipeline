@@ -31,10 +31,10 @@ const client = new cassandra.Client({
 });
 
 const getLatestRoomConditions = async () => {
-    const tempQuery = 'SELECT * FROM room_condition_temp ORDERBY timestamp DECS LIMIT 10';
-    const humidityQuery = 'SELECT * FROM room_condition_humidity ORDERBY timestamp DECS LIMIT 10';
-    const aqiQuery = 'SELECT * FROM room_condition_aqi LIMIT ORDERBY timestamp DECS 10';
-    const energyQuery = 'SELECT * FROM room_condition_energy ORDERBY timestamp DECS LIMIT 10';
+    const tempQuery = 'SELECT * FROM room_condition_temp LIMIT 10';
+    const humidityQuery = 'SELECT * FROM room_condition_humidity LIMIT 10';
+    const aqiQuery = 'SELECT * FROM room_condition_aqi LIMIT 10';
+    const energyQuery = 'SELECT * FROM room_condition_energy LIMIT 10';
 
     try {
         const [tempResult, humidityResult, aqiResult, energyResult] = await Promise.all([
