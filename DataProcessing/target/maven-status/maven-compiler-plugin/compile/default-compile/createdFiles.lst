@@ -1,0 +1,3 @@
+org/myorg/quickstart/FlinkCassandraReadJob$CassandraSourceFunction.class
+org/myorg/model/RoomCondition.class
+org/myorg/quickstart/FlinkCassandraReadJob.class
