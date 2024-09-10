@@ -26,7 +26,7 @@ def on_message(client, userdata, msg):
     if data.get('temp') is not None:
         prepared_stmt_temp = session.prepare("""
             INSERT INTO room_condition_temp (id, temp_value, room_id, device_id, timestamp)
-            VALUES (?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
         """)
         session.execute(prepared_stmt_temp, (record_id, data['temp'], data['room_id'], data['device_id'], timestamp))
     
@@ -34,7 +34,7 @@ def on_message(client, userdata, msg):
     if data.get('humidity') is not None:
         prepared_stmt_humidity = session.prepare("""
             INSERT INTO room_condition_humidity (id, humidity_value, room_id, device_id, timestamp)
-            VALUES (?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
         """)
         session.execute(prepared_stmt_humidity, (record_id, data['humidity'], data['room_id'], data['device_id'], timestamp))
     
@@ -42,7 +42,7 @@ def on_message(client, userdata, msg):
     if data.get('AQI') is not None:
         prepared_stmt_aqi = session.prepare("""
             INSERT INTO room_condition_aqi (id, aqi, room_id, device_id, timestamp)
-            VALUES (?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
         """)
         session.execute(prepared_stmt_aqi, (record_id, data['AQI'], data['room_id'], data['device_id'], timestamp))
     
@@ -50,7 +50,7 @@ def on_message(client, userdata, msg):
     if data.get('energy_consumption') is not None:
         prepared_stmt_energy = session.prepare("""
             INSERT INTO room_condition_energy (id, energy_consumption, room_id, device_id, timestamp)
-            VALUES (?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
         """)
         session.execute(prepared_stmt_energy, (record_id, data['energy_consumption'], data['room_id'], data['device_id'], timestamp))
 
