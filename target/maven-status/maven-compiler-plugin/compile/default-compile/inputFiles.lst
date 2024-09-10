@@ -1,2 +1,3 @@
 /home/ha/flink-1.20.0/flink-dist/target/flink-1.20.0-bin/flink-1.20.0/bin/my-flink-project/src/main/java/org/myorg/quickstart/WordCount.java
-/home/ha/flink-1.20.0/flink-dist/target/flink-1.20.0-bin/flink-1.20.0/bin/my-flink-project/src/main/java/org/myorg/quickstart/DataStreamJob.java
+/home/ha/flink-1.20.0/flink-dist/target/flink-1.20.0-bin/flink-1.20.0/bin/my-flink-project/src/main/java/org/myorg/quickstart/MqttFlinkToCassandraJob.java
+/home/ha/flink-1.20.0/flink-dist/target/flink-1.20.0-bin/flink-1.20.0/bin/my-flink-project/src/main/java/org/myorg/model/RoomCondition.java

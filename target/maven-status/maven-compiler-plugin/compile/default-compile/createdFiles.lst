@@ -1,2 +1,6 @@
 org/myorg/quickstart/WordCount.class
-org/myorg/quickstart/DataStreamJob.class
+org/myorg/quickstart/MqttFlinkToCassandraJob$1.class
+org/myorg/quickstart/MqttFlinkToCassandraJob.class
+org/myorg/quickstart/MqttSource$1.class
+org/myorg/quickstart/MqttSource.class
+org/myorg/model/RoomCondition.class

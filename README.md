@@ -5,9 +5,11 @@ This project aims to create a data pipeline for collecting, transforming, storin
 
 ## Tech Stack for This Project
 - **Ingestion:** MQTT
-- **Storage:** Apache Cassandra, Redis
+- **Storage:** Apache Cassandra, Hive
 - **Processing:** Apache Flink
-- **Programming Language:** Java
+- **Programming Language:** Java, Python, Javascrip (NodeJs)
+
+![Data Pipeline](/Images/datapipeline.png)
 
 ![Data Pipeline](./dataFlowOverview/dataflow.png)
 

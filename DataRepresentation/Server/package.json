@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cassandra-driver": "^4.7.2",
+    "express": "^4.19.2",
+    "express-csp-header": "^5.2.1",
+    "helmet": "^7.1.0",
+    "socket.io": "^4.7.5"
+  }
+}
