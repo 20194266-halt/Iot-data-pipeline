@@ -37,7 +37,8 @@ This project is a real-time dashboard that fetches data from a Cassandra databas
    - It displays real-time data updates in a user-friendly format, showing charts or tables representing sensor data.
 
 ## Project Architecture
-![Dashoard](/Images/real-time-dashboard.webp)
+<img src="/Images/real-time-dashboard.webp" alt="Dashboard" width="600" height="400">
+
 
 ### Components
 
@@ -47,30 +48,3 @@ This project is a real-time dashboard that fetches data from a Cassandra databas
    
 3. **Cassandra**: Stores the sensor data. The Node.js server queries this database and retrieves the latest sensor readings for display.
 
-## Flow of the Application
-
-1. **Data Ingestion**: Sensor data is ingested into the Cassandra database via various tables such as:
-   - `room_condition_temp`: Stores temperature values.
-   - `room_condition_humidity`: Stores humidity values.
-   - `room_condition_aqi`: Stores AQI values.
-   - `room_condition_energy`: Stores energy consumption values.
-
-2. **Backend (Node.js) Queries Cassandra**:
-   - The server queries the latest 10 records from each of the tables mentioned above using Cassandra’s CQL (Cassandra Query Language).
-   - These records are merged based on a common `id` or timestamp to create a combined room condition data structure.
-
-3. **Real-Time Updates**:
-   - Using Socket.IO, the server sends updates to all connected clients every 5 seconds.
-   - The data is emitted as a `roomConditionUpdate` event, which the front-end listens to.
-
-4. **Frontend Displays Data**:
-   - The front-end, built using HTML/JavaScript, listens to the `roomConditionUpdate` event and dynamically updates the displayed data without the need for refreshing the page.
-   - Users see real-time data updates on room conditions such as temperature, humidity, AQI, and energy consumption.
-
-## Setup Instructions
-
-### Prerequisites
-
-- Node.js (v16 or higher) installed on your machine.
-- Cassandra installed and running on your local machine or a remote server.
-- `npm` package manager.

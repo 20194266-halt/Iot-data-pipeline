@@ -17,7 +17,7 @@ This project leverages the pre-built tool named [IoT Data Simulator](https://git
 - **AQI_sensor**
 - **Energy_consumption**
 
-![Devices](Images/iot-data-simulator.png)
+![Devices](/Images/iot-data-simulator.png)
 
 ### Connect to MQTT Broker
 
@@ -27,16 +27,16 @@ This project leverages the pre-built tool named [IoT Data Simulator](https://git
 ### Consume from MQTT and Write Data to Cassandra
 
 - **Table air_quality**
-  ![Data Pipeline](Images/aqi.png)
+  ![Data Pipeline](/Images/aqi.png)
 
 - **Table humidity**
-  ![Data Pipeline](Images/humidity.png)
+  ![Data Pipeline](/Images/humidity.png)
 
 - **Table energy_consumption**
-  ![Data Pipeline](Images/energy.png)
+  ![Data Pipeline](/Images/energy.png)
 
 - **Table temperature**
-  ![Data Pipeline](Images/temp.png)
+  ![Data Pipeline](/Images/temp.png)
 
 ## Data Flow
 
