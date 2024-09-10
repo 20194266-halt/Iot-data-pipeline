@@ -25,34 +25,34 @@ def on_message(client, userdata, msg):
     # Insert temperature data
     if data.get('temp') is not None:
         prepared_stmt_temp = session.prepare("""
-            INSERT INTO room_condition_temp (id, temp_value, timestamp)
+            INSERT INTO room_condition_temp (id, temp_value, room_id, device_id, timestamp)
             VALUES (?, ?, ?)
         """)
-        session.execute(prepared_stmt_temp, (record_id, data['temp'], timestamp))
+        session.execute(prepared_stmt_temp, (record_id, data['temp'], data['room_id'], data['device_id'], timestamp))
     
     # Insert humidity data
     if data.get('humidity') is not None:
         prepared_stmt_humidity = session.prepare("""
-            INSERT INTO room_condition_humidity (id, humidity_value, timestamp)
+            INSERT INTO room_condition_humidity (id, humidity_value, room_id, device_id, timestamp)
             VALUES (?, ?, ?)
         """)
-        session.execute(prepared_stmt_humidity, (record_id, data['humidity'], timestamp))
+        session.execute(prepared_stmt_humidity, (record_id, data['humidity'], data['room_id'], data['device_id'], timestamp))
     
     # Insert AQI data
     if data.get('AQI') is not None:
         prepared_stmt_aqi = session.prepare("""
-            INSERT INTO room_condition_aqi (id, aqi, timestamp)
+            INSERT INTO room_condition_aqi (id, aqi, room_id, device_id, timestamp)
             VALUES (?, ?, ?)
         """)
-        session.execute(prepared_stmt_aqi, (record_id, data['AQI'], timestamp))
+        session.execute(prepared_stmt_aqi, (record_id, data['AQI'], data['room_id'], data['device_id'], timestamp))
     
     # Insert energy consumption data
     if data.get('energy_consumption') is not None:
         prepared_stmt_energy = session.prepare("""
-            INSERT INTO room_condition_energy (id, energy_consumption, timestamp)
+            INSERT INTO room_condition_energy (id, energy_consumption, room_id, device_id, timestamp)
             VALUES (?, ?, ?)
         """)
-        session.execute(prepared_stmt_energy, (record_id, data['energy_consumption'], timestamp))
+        session.execute(prepared_stmt_energy, (record_id, data['energy_consumption'], data['room_id'], data['device_id'], timestamp))
 
 mqtt_client = Client()
 mqtt_client.on_connect = on_connect
