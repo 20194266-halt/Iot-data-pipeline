@@ -1,3 +1,4 @@
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,10 +30,60 @@
     <div id="dashboard">
         <h1>Real-Time Room Conditions</h1>
         <div id="data-container">
-            <!-- Data will be displayed here -->
+           
         </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="script.js"></script> <!-- Include the external script -->
+    <script src="script.js"></script> 
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Data Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Real-Time Data Dashboard</h1>
+        </header>
+        <section class="charts">
+            <div class="chart-container">
+                <canvas id="energyChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="tempChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="humidityChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="aqiChart"></canvas>
+            </div>
+        </section>
+        <section class="summary">
+            <div class="summary-card">
+                <h2>Energy Consumption</h2>
+                <p id="energySum">0 kWh</p>
+            </div>
+            <div class="summary-card">
+                <h2>Average Temperature</h2>
+                <p id="avgTemp">0 °C</p>
+            </div>
+            <div class="summary-card">
+                <h2>Average Humidity</h2>
+                <p id="avgHumidity">0 %</p>
+            </div>
+            <div class="summary-card">
+                <h2>Average AQI</h2>
+                <p id="avgAqi">0</p>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

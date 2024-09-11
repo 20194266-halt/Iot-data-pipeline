@@ -48,3 +48,5 @@ This project is a real-time dashboard that fetches data from a Cassandra databas
    
 3. **Cassandra**: Stores the sensor data. The Node.js server queries this database and retrieves the latest sensor readings for display.
 
+### Result
+![Dashboard](/Images/real-time-dashboard.png)
